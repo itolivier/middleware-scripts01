@@ -11,3 +11,5 @@ install-jenkins.sh
 install-sonarQube.sh
 web-resume.sh
 Jenkinsfile
+
+Good luck
