@@ -7,9 +7,9 @@ pipeline {
                 echo 'Hello World'
             }
         }
-         stage('test') {
+         stage('create zip file') {
             steps {
-                echo 'Hello test'
+                sh 'zip middleware-scripts01-${BUILD_NUMBER}.zip *' 
             }
         }
          stage('build') {
