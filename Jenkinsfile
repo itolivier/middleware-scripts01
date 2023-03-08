@@ -1,15 +1,18 @@
 pipeline {
     agent any
+    tools {
+ maven 'M2_HOME'
+    }
+    triggers {
+    pollSCM ('* * * * *')
+    }
 
     stages {
-        stage('build') {
+        stage('maven package') {
             steps {
-                echo 'building'
-            }
-        }
-         stage('create zip file') {
-            steps {
-                sh 'zip middleware-scripts01-${BUILD_NUMBER}.zip *' 
+                sh 'mvn clean'
+                sh 'mvn install'
+                sh 'mvn package'
             }
         }
          stage('test') {
