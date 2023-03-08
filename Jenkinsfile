@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('build') {
             steps {
-                echo 'Hello World'
+                echo 'building'
             }
         }
          stage('create zip file') {
@@ -12,9 +12,9 @@ pipeline {
                 sh 'zip middleware-scripts01-${BUILD_NUMBER}.zip *' 
             }
         }
-         stage('build') {
+         stage('test') {
             steps {
-                echo 'Hello build'
+                echo 'testing'
             }
         }
     }
