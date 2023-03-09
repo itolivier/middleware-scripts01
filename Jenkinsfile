@@ -12,7 +12,7 @@ pipeline {
         }
         stage('kernel') {
             steps {
-                echo 'your kernel release is'
+                echo 'your kernel release is:'
             sh 'uname -r'    
             }
         }
