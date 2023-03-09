@@ -35,5 +35,11 @@ pipeline {
                 echo 'load average: 1,5,15 minutes'
             }
         }
+        stage('cpu info') {
+            steps {
+            sh 'lscpu'    
+                echo 'cpu info is:'
+            }
+        }
     }
 }
